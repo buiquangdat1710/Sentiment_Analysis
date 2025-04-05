@@ -12,6 +12,8 @@ import google.generativeai as genai
 
 import os
 from dotenv import load_dotenv
+import torch
+torch.set_default_device('cpu') 
 
 load_dotenv()
 API_KEY = os.getenv("API_KEY")
@@ -424,8 +426,8 @@ if analyze_button and model_loaded:
                 st.markdown('</div>', unsafe_allow_html=True)
             
             # Display insights
-            st.markdown('<h3 class="section-header">💡 Thông Tin Chi Tiết từ Gemini</h3>', unsafe_allow_html=True)
-            with st.spinner("Đang phân tích chi tiết bằng Gemini..."):
+            st.markdown('<h3 class="section-header">💡 Phân Tích Cảm Xúc </h3>', unsafe_allow_html=True)
+            with st.spinner("Đang phân tích chi tiết cảm xúc ..."):
                 gemini_insight = analyze_emotion_with_gemini(user_input, top_emotion)
                 st.markdown(f'<div class="insight-bullet">{gemini_insight}</div>', unsafe_allow_html=True)
             
