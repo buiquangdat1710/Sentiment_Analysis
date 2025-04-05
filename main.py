@@ -304,7 +304,7 @@ if analyze_button and model_loaded:
         # Add a spinner while processing
         with st.spinner("Đang phân tích cảm xúc..."):
             # Get predictions
-            preds = classifier(user_input, top_k=None)
+            preds = classifier(user_input, return_all_scores=True)
             preds_df = pd.DataFrame(preds[0])
             
             # Ensure we use the correct labels instead of indices
