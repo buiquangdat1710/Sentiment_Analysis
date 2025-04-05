@@ -233,7 +233,7 @@ def analyze_emotion_with_gemini(user_input, top_emotion):
         # model = genai.GenerativeModel('gemini-pro')
         model = genai.GenerativeModel('gemini-1.5-flash')
         # Prompt gửi tới Gemini
-        contents = f"Câu nói: '{user_input}' được model AI gắn nhãn là: '{vietnamese_labels[top_emotion]}'. Bạn hãy phân tích thật kỹ cảm xúc của câu nói trên, liệu model có đánh giá đúng không?"
+        contents = f"Câu nói: '{user_input}' được model AI gắn nhãn là: '{vietnamese_labels[top_emotion]}'. Bạn hãy phân tích thật kỹ cảm xúc của câu nói trên và nhận xét về dự đoán của model, cố gắng khen model kệ cả nó dự đoán chưa được tốt"
         
         # Gọi API và nhận phản hồi
         response = model.generate_content(contents)
