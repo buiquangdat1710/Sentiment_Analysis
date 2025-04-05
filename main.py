@@ -13,7 +13,7 @@ import google.generativeai as genai
 import os
 from dotenv import load_dotenv
 import torch
-torch.set_default_device('cpu') 
+
 
 load_dotenv()
 API_KEY = os.getenv("API_KEY")
