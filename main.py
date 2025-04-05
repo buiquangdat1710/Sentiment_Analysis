@@ -12,8 +12,6 @@ import google.generativeai as genai
 
 import os
 from dotenv import load_dotenv
-import torch
-
 
 load_dotenv()
 API_KEY = os.getenv("API_KEY")
@@ -281,8 +279,7 @@ with col1:
 @st.cache_resource
 def load_model():
     model_id = "Dat1710/distilbert-base-uncased-finetuned-emotion"
-    device = -1
-    return pipeline("text-classification", model=model_id, device=device)
+    return pipeline("text-classification", model=model_id)
 
 # Try to load the model
 try:
