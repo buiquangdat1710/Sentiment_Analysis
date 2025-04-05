@@ -281,7 +281,8 @@ with col1:
 @st.cache_resource
 def load_model():
     model_id = "Dat1710/distilbert-base-uncased-finetuned-emotion"
-    return pipeline("text-classification", model=model_id)
+    device = -1
+    return pipeline("text-classification", model=model_id, device=device)
 
 # Try to load the model
 try:
